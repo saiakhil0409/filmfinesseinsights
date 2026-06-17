@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+
+# Hide index.html from URL — redirect to clean root
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Hide index.html with query params — preserve them
+[[redirects]]
+  from = "/index.html?review=:id"
+  to = "/?review=:id"
+  status = 301
+  force = true
+
+[[edge_functions]]
+  path = "/index.html"
+  function = "og-meta"
+
+[[edge_functions]]
+  path = "/"
+  function = "og-meta"
