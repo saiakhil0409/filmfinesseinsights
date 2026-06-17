@@ -188,9 +188,108 @@ header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 2re
   .more-reviews-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
 }
 
+/* ── MOBILE (max 600px) ── */
+@media(max-width:600px){
+  /* Header */
+  header{padding:0 1rem;height:54px}
+  .logo{font-size:1.1rem}
+  .header-right{gap:6px}
+  .search-wrap input{width:110px;font-size:12px;padding:6px 10px 6px 30px}
+  .search-icon{left:9px;font-size:11px}
+  .btn-write{padding:6px 10px;font-size:12px}
+  .btn-logout{padding:6px 10px;font-size:12px}
 
+  /* Hero */
+  .hero{padding:1.75rem 1rem 1.5rem}
+  .hero h1{font-size:1.6rem}
 
-/* ── ADMIN ── */
+  /* Container */
+  .container{padding:1.25rem 1rem}
+
+  /* Stats */
+  .stats{gap:1.5rem;padding-bottom:1.25rem;margin-bottom:1.25rem}
+  .stat-num{font-size:1.3rem}
+
+  /* Cards grid - single column */
+  .cards-grid{grid-template-columns:1fr;gap:1rem}
+  .card-body{padding:.85rem}
+  .card-title{font-size:1rem}
+
+  /* Detail page */
+  .detail-header{padding:0 1rem;height:54px;gap:8px}
+  .detail-header .logo{font-size:1rem}
+  .detail-actions{gap:6px}
+  .back-btn{padding:5px 10px;font-size:12px}
+  .btn-share{padding:5px 10px;font-size:12px}
+  .btn-republish{padding:5px 10px;font-size:12px}
+  .btn-del{padding:5px 10px;font-size:12px}
+  .detail-layout{padding:1.25rem 1rem}
+  .detail-movie-title{font-size:1.5rem}
+  .detail-meta{gap:8px;margin-bottom:1.25rem}
+  .stars-lg{font-size:16px}
+  .detail-body{font-size:15px;line-height:1.75}
+  .detail-rating-row{margin-top:1.5rem;padding-top:1.25rem}
+
+  /* Instagram CTA */
+  .insta-cta{padding:1rem 1.2rem;gap:10px}
+  .insta-cta-main{font-size:.95rem}
+
+  /* More reviews grid */
+  .more-reviews-section{padding:1.5rem 1rem}
+  .more-reviews-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem}
+  .more-reviews-hdr{margin-bottom:1rem}
+  .more-reviews-title{font-size:1.1rem}
+  .mr-cover{height:110px}
+  .mr-body{padding:.6rem}
+  .mr-title{font-size:.82rem}
+
+  /* Write modal */
+  .modal{border-radius:10px}
+  .modal-hdr{padding:1rem 1rem .75rem}
+  .modal-body{padding:1rem}
+  .modal-ftr{padding:.75rem 1rem 1.25rem;flex-wrap:wrap}
+  .btn-save,.btn-cancel,.btn-preview{width:100%;justify-content:center}
+  .frow{grid-template-columns:1fr}
+
+  /* Rich text toolbar - wrap and shrink */
+  .rte-toolbar{padding:4px 5px;gap:2px}
+  .tb{min-width:24px;height:24px;padding:3px 5px;font-size:12px}
+  .tb-select{height:24px;font-size:11px;max-width:70px}
+  .rte-sep{margin:0 1px}
+
+  /* Share popup */
+  .share-box{padding:1.25rem}
+  .share-platforms{grid-template-columns:1fr 1fr;gap:8px}
+  .share-btn{padding:.6rem .75rem;font-size:12px;gap:7px}
+
+  /* Comments */
+  .comments-section{margin-top:2rem;padding-top:1.5rem}
+  .comments-hdr{font-size:1.1rem}
+  .comment-card{padding:.85rem}
+  .comment-user-bar{flex-wrap:wrap;gap:8px}
+
+  /* Draft banner */
+  .draft-banner{flex-direction:column;align-items:flex-start;gap:8px}
+  .draft-banner-btns{width:100%;display:flex;gap:8px}
+  .btn-resume,.btn-discard{flex:1;text-align:center}
+
+  /* Preview overlay */
+  .preview-content{padding:1.5rem 1rem}
+  .preview-title{font-size:1.5rem}
+
+  /* Color palette popup */
+  .color-palette-popup{min-width:160px}
+  .swatches-grid{grid-template-columns:repeat(6,1fr)}
+}
+
+/* ── VERY SMALL (max 380px) ── */
+@media(max-width:380px){
+  .logo{font-size:.95rem}
+  .search-wrap input{width:90px}
+  .detail-movie-title{font-size:1.3rem}
+  .share-platforms{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:1fr}
+}
 
 /* ── SHARE BUTTON & POPUP ── */
 .btn-share{background:none;border:1px solid var(--border);color:var(--white2);padding:7px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;display:flex;align-items:center;gap:6px}
@@ -412,9 +511,6 @@ input.hidden-color{opacity:0;width:0;height:0;position:absolute}
 .comments-empty{text-align:center;padding:2rem;color:var(--white3);font-size:14px}
 .comments-loading{text-align:center;padding:1.5rem;color:var(--white3);font-size:13px}
 
-@media(max-width:600px){
-  .comment-user-bar{flex-wrap:wrap}
-}
 </style>
 </head>
 <body>
@@ -436,12 +532,10 @@ input.hidden-color{opacity:0;width:0;height:0;position:absolute}
     <h1>Film Finesse <em>Insights</em></h1>
   </div>
   <div class="container">
-    <!--
     <div class="stats">
       <div><div class="stat-num" id="stat-total">0</div><div class="stat-label">Reviews</div></div>
       <div><div class="stat-num" id="stat-avg">—</div><div class="stat-label">Avg rating</div></div>
     </div>
-    -->
     <div id="draft-banner" style="display:none" class="draft-banner">
       <div class="draft-banner-text"><div class="draft-banner-dot"></div>You have an unsaved draft — <strong id="draft-title-hint"></strong></div>
       <div class="draft-banner-btns">
